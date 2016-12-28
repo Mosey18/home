@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function age(){
+    var ary=Array.prototype.slice.call(arguments);
+    ary.sort(function(a,b){return a-b})
+    ary.pop();ary.shift();
+    return (eval(ary.join("+")/ary.length).toFixed(2))
+}
+    alert(age(2.1222,3.223,5.2131))
+</script>
+</body>
+</html>

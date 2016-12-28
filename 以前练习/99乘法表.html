@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        width: 900px;
+        font-size: 15px;
+        display: inline-block;
+    }
+    li{
+
+        height: 30px;
+        line-height: 30px;
+
+    }
+    li span{
+        padding: 10px;
+    }
+
+    li.bg0{background: #4ecf5b;
+
+    }
+    li.bg1{background: #00a8ff}
+    li.bg2{background: #0abd08}
+    li.bbg{background: #ff6700}
+</style>
+<body>
+<ul>
+    <li></li>
+</ul>
+</body>
+</html>
+<script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    var aLi=oUl.getElementsByTagName('li');
+    var str = '';
+    var colr=null;
+    for(var i=1;i<=9;i++){
+        str+="<li>";
+        for(var j=1;j<=i;j++){
+            str+= '<span>'+(j+'*'+i+'='+j*i)+'</span>';
+        }
+        str+="</li>";
+    }
+    oUl.innerHTML=str;
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].className='bg'+i%3;
+        aLi[i].onmouseover=function(){
+            colr=this.className;
+            this.className='bbg';
+        };
+        aLi[i].onmouseout=function(){
+            this.className=colr;
+        }
+    }
+</script>

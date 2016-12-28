@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+ div{
+     width: 200px;
+     height: 200px;
+     line-height: 200px;
+     border-radius: 50%;
+     background: #fe1e38;
+     font-size: 80px;
+     text-align: center;
+     -webkit-user-select: none;
+ }
+</style>
+<body>
+<div>0</div>
+</body>
+</html>
+<script>
+/*    var oDiv=document.getElementsByTagName('div')[0];
+    var n=0;
+    oDiv.onclick=function(){
+        this.innerHTML++;
+    }*/
+    var oDiv=document.getElementsByTagName('div')[0];
+    var n=0;
+(function(){
+    oDiv.onclick=function(){
+        this.innerHTML=++n;
+    }
+})()
+</script>
